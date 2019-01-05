@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 import java.io.IOException;
 
 public class SimonSays extends KeyAdapter {
-
+	int points = 0;
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
 	JFrame frame;
@@ -34,7 +34,10 @@ public class SimonSays extends KeyAdapter {
 	private void makeAlbum() {
 		// 2. Add the four images that match keyboard keys like this:
 		// images.put(new Integer(KeyEvent.VK_UP), "up.jpg");
-
+		images.put(new Integer(KeyEvent.VK_UP), "up.jpg");
+		images.put(new Integer(KeyEvent.VK_DOWN), "down.jpg");
+		images.put(new Integer(KeyEvent.VK_RIGHT), "right.jpg");
+		images.put(new Integer(KeyEvent.VK_LEFT), "left.jpg");
 		// 3. Use a JOptionPane to tell the user the rules: "Press the matching key when
 		// 'Simon says' otherwise press a different key"
 		JOptionPane.showMessageDialog(null,
@@ -46,30 +49,41 @@ public class SimonSays extends KeyAdapter {
 
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
-
+		
 		// 16. If the keyCode matches the imageIndex and "Simon says"
-
+          if (imageIndex==e.getKeyCode()&&simonSays == true) {
+	  points ++;
+	  speak ("you are correct");
+		}
+         
 		// 17. Increase the value of score
 
 		// 18. Use the speak method to tell the user they were correct
-
+       
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't say..."
-
+        if (imageIndex!=e.getKeyCode()&&simonSays== false) {
+			points++;
+			speak("you are correct");
+		}
 		// 20. Increase the value of score
-
+     
 		// 21. Use the speak method to tell the user they were correct
-
+       
 		// 22. Increment tries by 1
-
+        tries++;
 		// 25. If tries is greater than 9 (or however many you want)...
-
+            if (tries>9) {
+				JOptionPane.showMessageDialog(null,"Your score is"+points);
+				System.exit(0);
+			}
 		// 26. Tell the user their score
 
 		// 27. Exit the program
-
+     
 		// 23. Dispose of the frame
-
+     frame.dispose();
 		// 24. Call the showImage method to show a new image
+     showImage();
 	}
 
 	private void showImage() {
@@ -94,11 +108,13 @@ public class SimonSays extends KeyAdapter {
 		// "Simon says press this key" or "Press this key"
          int r=  random.nextInt(2);
          if (r==0) {
-        	 
+        	 speak("Simon says press this key");
+        	 simonSays= true;
          }
-		// 14. Above, set the value of simonSays to true/false appropriately
-
-	}
+         else {
+        	 speak ("Press this key");
+        	 simonSays=false;
+        	 }}
 
 	private Component getNextRandomImage() {
 		this.imageIndex = new Random().nextInt(4) + 37;
@@ -125,7 +141,7 @@ public class SimonSays extends KeyAdapter {
 }
 
 /*
- * BONUS! Add a timer : ~~~ where the code starts running ~~~ timeAtStart =
+ * BONUS! Add a timer :  where the code starts running ~~~ timeAtStart =
  * newDate();
  *
  * ~~~ where the code ends ~~~ Date timeAtEnd = new Date();
