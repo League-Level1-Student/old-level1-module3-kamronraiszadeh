@@ -56,17 +56,15 @@ public class Jeopardy implements ActionListener {
 		// 7. Add the firstButton to the quizPanel
 quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that
-		// your
-             
-		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
-
+		// your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnv
+                      
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-
+       secondButton=createButton("two");
 		// 10. Add the secondButton to the quizPanel
-
+  quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+                  
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -93,7 +91,7 @@ quizPanel.add(firstButton);
 buttonCount ++;
 		// Return your new button instead of the temporary button
 
-		return new JButton("temporary button");
+		return button; 
 	}
 
 	public void actionPerformed(ActionEvent e) {
