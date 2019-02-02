@@ -64,8 +64,8 @@ public class Jeopardy implements ActionListener {
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-		firstButton.addActionListener(l);
-		secondButton.addActionListener(l);
+		firstButton.addActionListener(this);
+		secondButton.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -79,6 +79,7 @@ public class Jeopardy implements ActionListener {
 		d.setName("$800");
 		JButton e = new JButton();
 		e.setName("$1000"); 
+	
 		/*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -166,7 +167,7 @@ public class Jeopardy implements ActionListener {
 			ex.printStackTrace();
 		}
 	}
-
+	
 	private Component makeScorePanel() {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel("score:"));
