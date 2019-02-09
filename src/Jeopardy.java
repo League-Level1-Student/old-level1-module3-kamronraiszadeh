@@ -78,8 +78,8 @@ public class Jeopardy implements ActionListener {
 		JButton d = new JButton();
 		d.setName("$800");
 		JButton e = new JButton();
-		e.setName("$1000"); 
-	
+		e.setName("$1000");
+
 		/*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -113,7 +113,7 @@ public class Jeopardy implements ActionListener {
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
 		if (buttonPressed.equals(firstButton)) {
-
+			askQuestion("How old is Taylor Swift?", "29", 200);
 		}
 		// Call the askQuestion() method
 
@@ -121,7 +121,9 @@ public class Jeopardy implements ActionListener {
 		// score should change.
 
 		// If the buttonPressed was the secondButton
-
+		if (buttonPressed.equals(secondButton)) {
+			askQuestion("Who won the Superbowl?", "patriots", 400);
+		}
 		// Call the askQuestion() method with a harder question
 
 		// Clear the text on the button that was pressed (set the button text to
@@ -133,16 +135,18 @@ public class Jeopardy implements ActionListener {
 
 		// Use the playJeopardyTheme() method to play music while the use thinks of an
 		// answer
-
+		playJeopardyTheme();
 		// Remove this temporary message and replace it with a pop-up that asks the user
 		// the question
 		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
 
 		// Stop the theme music when they have entered their response. Hint: use the
 		// sound variable
-
+          sound.stop();
 		// If the answer is correct
-
+          if (condition) {
+			
+		}
 		// Increase the score by the prizeMoney
 
 		// Pop up a message to tell the user they were correct
@@ -167,7 +171,7 @@ public class Jeopardy implements ActionListener {
 			ex.printStackTrace();
 		}
 	}
-	
+
 	private Component makeScorePanel() {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel("score:"));
