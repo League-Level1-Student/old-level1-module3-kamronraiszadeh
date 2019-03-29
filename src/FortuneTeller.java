@@ -45,26 +45,29 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
    	 // 5. Print the mouseX variable
-
+  System.out.println(mouseX);
+  System.out.println(mouseY);
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
    	 // 7. Adjust your secret location co-ordinates here:
-   	 int secretLocationX = 0;
-   	 int secretLocationY = 0;
+   	 int secretLocationX = 125;
+   	 int secretLocationY = 105;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
+   		 JOptionPane.showInputDialog("Enter a question for the fortune teller to answer");
 
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
-   		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+   		  AudioClip sound = JApplet.newAudioClip(getClass().getResource("101184_steygos93_roar2.mp3"));
+   		 
    		 // 10. Play the sound
-
+       sound.play();
    		 // 11. Use the pause() method below to wait until your music has finished
-
+      pause(100);
    		 // 12. Insert your completed Magic 8 ball recipe (http://bit.ly/Zdrf6d) here
-
-   	 }
-
-    }
+    Random random = new Random();
+    
+       }}
+    
 
     private boolean areClose(int mouseX, int secretLocationX) {
    	 return mouseX < secretLocationX + 15 && mouseX > secretLocationX - 15;
