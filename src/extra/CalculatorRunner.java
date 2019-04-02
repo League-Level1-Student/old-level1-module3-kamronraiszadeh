@@ -16,5 +16,6 @@ double answer4=cal.divide(10.0, 10.0);
 System.out.println(answer4);
 
 cal.view();
+
 }
 }
