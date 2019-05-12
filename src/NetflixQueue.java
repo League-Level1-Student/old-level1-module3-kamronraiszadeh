@@ -8,6 +8,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+import javax.swing.JOptionPane;
+
 public class NetflixQueue {
 	
 	ArrayList<Movie> movies = new ArrayList<Movie>();
@@ -37,6 +39,9 @@ public class NetflixQueue {
 		for (Movie movie : movies) {
 			System.out.println(movie);
 		}
+		JOptionPane.showMessageDialog(null, "The best movie is Jaws, Matrix,Avatar");
+		JOptionPane.showMessageDialog(null, "The best second movie is Rocky");
+		
 	}
 
 }
