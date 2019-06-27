@@ -12,17 +12,18 @@ public class TypingTutor implements KeyListener {
 
 	public static void main(String[] args) {
 		TypingTutor type = new TypingTutor();
-		type.Type();
+		type.view();
+
 	}
 
-	public void Type() {
-		// JFrame frame = new JFrame();
+	public void view() {
+
 		frame.setVisible(true);
 		JPanel panel = new JPanel();
 		frame.setTitle("TYPE NOW");
-		frame.setSize(500, 500);
+		frame.setSize(350, 350);
 		frame.add(panel);
-
+		frame.setDefaultCloseOperation(3);
 		currentLetter = generateRandomLetter();
 
 		label.setText(currentLetter + "");
@@ -42,14 +43,14 @@ public class TypingTutor implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+
 		label.setText(currentLetter + "");
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println(currentLetter);
+
+		System.out.println("you typed " +currentLetter+ "");
 
 		if (currentLetter == e.getKeyChar()) {
 			frame.setBackground(Color.GREEN);
