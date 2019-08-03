@@ -47,7 +47,7 @@ public class CowTimer {
 		 * You can use the .wav file in the default package, or you can download one
 		 * from freesound.org, then drag it into the default package.
 		 */
-   playSound("moo.wav");
+            playSound("moo.wav");
 	}
 
 	private void playSound(String fileName) {
