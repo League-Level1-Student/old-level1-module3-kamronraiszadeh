@@ -11,8 +11,8 @@ public class PigLatinTranslator implements ActionListener {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JButton button = new JButton();
-	JTextField field = new JTextField();
-	JTextField field2 = new JTextField();
+	JTextField field = new JTextField(13);
+	JTextField field2 = new JTextField(13);
 
 	public static void main(String[] args) {
            PigLatinTranslator oink = new  PigLatinTranslator();
@@ -22,16 +22,12 @@ public class PigLatinTranslator implements ActionListener {
 	public void view() {
 		frame.setVisible(true);
 		button.setText("translate");
-		field.setPreferredSize(new Dimension(200,20));
-		field2.setPreferredSize(new Dimension(200,20));
 		panel.add(field);
 		panel.add(button);
 		panel.add(field2);
 		frame.add(panel);
-		button.addActionListener(this);
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
 	}
 
 	/**

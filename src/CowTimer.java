@@ -24,7 +24,7 @@ public class CowTimer {
 
 	public void setTime(int minutes) {
 		this.minutes = minutes;
-		System.out.println("Cow set to " + minutes + " minutes.");
+		System.out.println("Cow is set to "+ minutes+ " minutes");
 	}
 
 	public void start() throws InterruptedException {
