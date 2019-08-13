@@ -22,6 +22,7 @@ public class PigLatinTranslator implements ActionListener {
 	public void view() {
 		frame.setVisible(true);
 		button.setText("translate");
+		button.addActionListener(this);
 		panel.add(field);
 		panel.add(button);
 		panel.add(field2);
